@@ -2,7 +2,7 @@ package pl.jarugalucas.sfgdi.controllers;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import pl.jarugalucas.sfgdi.services.GreetingServiceImpl;
+import pl.jarugalucas.sfgdi.services.ConstructorGreetingService;
 
 class PropertyInjectedControllerTest {
 
@@ -13,7 +13,7 @@ class PropertyInjectedControllerTest {
         // mimicking what Spring framework would be doing - creating object
         controller = new PropertyInjectedController();
 
-        controller.greetingService = new GreetingServiceImpl();
+        controller.greetingService = new ConstructorGreetingService();
     }
 
     @Test
