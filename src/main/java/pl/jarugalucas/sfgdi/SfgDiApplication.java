@@ -18,8 +18,8 @@ public class SfgDiApplication {
 		MyController myController = (MyController) ctx.getBean("myController");
 		// getBean uses lower case name, that's why myController instead MyController
 
-		String greeting = myController.sayHello();
-		System.out.println(greeting);
+		System.out.println("--------------- Primary Bean");
+		System.out.println(myController.sayHello());
 
 		System.out.println("--------------- Property");
 
