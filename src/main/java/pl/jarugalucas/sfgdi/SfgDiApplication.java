@@ -3,10 +3,7 @@ package pl.jarugalucas.sfgdi;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
-import pl.jarugalucas.sfgdi.controllers.ContructorInjectedController;
-import pl.jarugalucas.sfgdi.controllers.MyController;
-import pl.jarugalucas.sfgdi.controllers.PropertyInjectedController;
-import pl.jarugalucas.sfgdi.controllers.SetterInjectedController;
+import pl.jarugalucas.sfgdi.controllers.*;
 
 @SpringBootApplication
 public class SfgDiApplication {
@@ -14,6 +11,10 @@ public class SfgDiApplication {
 	public static void main(String[] args) {
 		// the run turns back an Application Context
 		ApplicationContext ctx = SpringApplication.run(SfgDiApplication.class, args);
+
+		I18nController i18nController = (I18nController) ctx.getBean("i18nController");
+
+		System.out.println(i18nController.sayHello());
 
 		MyController myController = (MyController) ctx.getBean("myController");
 		// getBean uses lower case name, that's why myController instead MyController
